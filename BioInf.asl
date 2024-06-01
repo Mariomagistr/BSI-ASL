@@ -38,8 +38,8 @@ startup {
 }
 
 start{
+	vars.cur_split = 0;
 	if (current.area == 17179869188 && current.afterLogo == 1 && old.afterLogo == 0) {
-		vars.cur_split = 0;
 		return true;
 	}
 	return false;
@@ -83,7 +83,7 @@ init
 	timer.IsGameTimePaused=false;
 }
 
-split { 
+split {
 	if (current.area == vars.area_split[vars.cur_split]) {
 		vars.cur_split = vars.cur_split + 1;
 		return true;
